@@ -4,6 +4,7 @@ function addAllEvents(){
     const length = this.value.length;
     const count = 140 - length;
     $('textarea').parent().find(".counter").text(count);
+    $('.counter').removeClass("red");
     if(count < 0 ){
         $('textarea').parent().find(".counter").addClass("red");
     } 

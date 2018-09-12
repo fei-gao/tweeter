@@ -45,6 +45,8 @@ function renderTweets(tweets) {
 function submitForm(){
   $("form").on('submit',function(){
     event.preventDefault();
+    // $('#error').slideUp("slow");
+    $('#error').empty();
     const isValid = validateForm();
     if(isValid === true){
       console.log("form valid");
@@ -75,6 +77,10 @@ function submitForm(){
       })
     } else {
       console.log("form invalid and not submitted");
+      // $('#error').html(isValid).slideDown("slow");
+      $('#error').slideDown("slow", function(){
+        $('#error').text(isValid);
+})
     }
   })
 }
@@ -94,11 +100,15 @@ function validateForm(){
   const str = $('textarea').val();
   const length = str.length;
   if( str === ""){
-    alert("empty string");
-    return false;
+// $('#error').slideDown("slow", function(){
+  // $('#error').text("empty string");
+// })
+    // $('#error').text("Content cannot be empty, type something.").slideDown("slow");
+    return "Content cannot be empty, type anything.";
   } else if( length > 140){
-    alert("characters over 140");
-    return false;
+    // $('#error').slideDown();
+    // $('#error').text("Max charaters 140");
+    return "Characters overlimit, max 140.";
   } else {
     return true;
   }
@@ -113,13 +123,11 @@ $('document').ready(function(){
     // if($(".new-tweet").is(':visible')){
     //   $(".new-tweet").slideUp();
     // } else {
-    //   $('textarea').sliceDown();
+    //   $('textarea').slideDown();
     //   $('textarea').focus();
     // }
-    $(".new-tweet").slideToggle("slow");
-    if($(".new-tweet").css('display')){
-    $('textarea').focus();
-    }
-  })
-
-});
+    $(".new-tweet").slideToggle("slow", function(){
+      $('textarea').focus();
+    });
+    })
+  });
