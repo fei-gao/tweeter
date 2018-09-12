@@ -18,8 +18,82 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   /* position: relative; */
+   /* top: 80px; */
+   width: 450px;
+   margin: auto;
+   background-color: #fff;
+   padding-top: 140px;
+
+ }
+
+ .red{
+   color: rgb(219, 13, 13);
+ }
+
+article.tweets {
+   margin: 30px 1em;
+   border: 2px solid rgb(44, 42, 42, 0.6);
+   border-radius: 10px;
+}
+
+.tweets:hover{
+  border: 2px solid rgb(44, 42, 42, 0.9);
+}
+
+.tweets:hover header{
+  background-color: rgba(158, 150, 150, 0.9);
+}
+
+.tweets:hover .icon{
+ display: inline; 
+}
+
+article header{
+  background-color: rgba(158, 150, 150, 0.6);
+  padding: 0.5em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+article header img{
+  border-radius: 5px;
+}
+
+article strong#name {
+  position: relative;
+  bottom: 30px;
+  font-size: larger;
+  padding-left: 5px;
+}
+
+article div{
+  padding: 0.5em;
+  border-bottom: 2px solid rgba(158, 150, 150, 0.6);
+}
+
+header #handle {
+  float: right;
+}
+
+article footer{
+  padding: 0.5em;
+}
+
+span.icon{
+  display:none;
+  float:right;
+  color: #00a087;
+}
+
+span.icon i{
+  padding: 3px;
+}
