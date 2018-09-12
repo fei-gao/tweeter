@@ -80,14 +80,16 @@ article strong#name {
   padding-left: 5px;
 }
 
-article div{
-  padding: 0.5em;
-  border-bottom: 2px solid rgba(158, 150, 150, 0.6);
-}
-
 header #handle {
   float: right;
 }
+
+article div{
+  padding: 1em 0.5em;
+  border-bottom: 2px solid rgba(158, 150, 150, 0.6);
+  word-wrap:break-word;
+}
+
 
 article footer{
   padding: 0.5em;
