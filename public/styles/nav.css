@@ -23,6 +23,24 @@
   float: left;
 }
 
+#compose-btn {
+  float: right;
+  line-height: 50px;
+  vertical-align: middle;
+  margin: 12px 12px 12px 12px;
+  width: 80px;
+  border-radius: 0.5em;
+  background-color: rgb(220, 235, 233);
+  color: #00a087;
+  font-weight: 300;
+  border: 2px solid black;
+}
+
+#compose-btn:hover {
+ background-color: white;
+ color: black;
+}
+
 #nav-bar:after{
   clear:both;
 }

@@ -104,9 +104,22 @@ function validateForm(){
   }
 }
 
+
 $('document').ready(function(){
 
   loadTweets();
   submitForm();
+  $('#compose-btn').click(function(){
+    // if($(".new-tweet").is(':visible')){
+    //   $(".new-tweet").slideUp();
+    // } else {
+    //   $('textarea').sliceDown();
+    //   $('textarea').focus();
+    // }
+    $(".new-tweet").slideToggle("slow");
+    if($(".new-tweet").css('display')){
+    $('textarea').focus();
+    }
+  })
 
 });
