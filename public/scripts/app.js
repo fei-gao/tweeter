@@ -47,19 +47,31 @@ function submitForm(){
     event.preventDefault();
     const isValid = validateForm();
     if(isValid === true){
-      console.log("form submmitted");
+      console.log("form valid");
+      // $.ajax({
+      //   type: 'POST',
+      //   url: '/tweets',
+      //   data: $("form").serialize(), //convert raw data into urlencoded format
+      //   success: function(response){
+      //     console.log('form submission success');
+      //     loadTweets();
+      //     $('textarea').val('');
+      //   },
+      //   error: function(){
+      //     console.log("form submission fail");
+      //   }
+      // })
       $.ajax({
         type: 'POST',
         url: '/tweets',
-        data: $("form").serialize(),
-        success: function(response){
-          console.log('form submission success');
+        data: $("form").serialize(), //convert raw data into urlencoded format
+      }).then(function(){
+        console.log('form submission success');
+        $('#tweets-container').empty();
           loadTweets();
           $('textarea').val('');
-        },
-        error: function(){
-          console.log("form submission fail");
-        }
+      }).fail(function(){
+        console.log("form valid but not submitted");
       })
     } else {
       console.log("form invalid and not submitted");
@@ -67,13 +79,14 @@ function submitForm(){
   })
 }
 
+// fetch tweets and reload page
 function loadTweets(){
   $.ajax({
     type:'GET',
     url: '/tweets',
-  }).then(function(json){
-    console.log("fetch success", json);
-    renderTweets(json);
+  }).then(function(tweetsArr){
+    console.log("fetch success", tweetsArr);
+    renderTweets(tweetsArr);
     })
 };
 
