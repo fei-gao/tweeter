@@ -11,10 +11,15 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Final Product
+[!"Screenshot of tweet compose box"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweet-box.png)
+[!"Screenshot of tweets"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweets.png)
+[!"Screenshot of initial tweets"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/initial-tweets.png)
+
 ## Dependencies
-
-- Express
-- Node 5.10.x or above
-
-
-//flaws: not able to slide up and down the validation error
+- body-parser
+- chance
+- express
+- mongodb
+- node 5.10.x or above
+- md5
