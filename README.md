@@ -12,9 +12,9 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Final Product
-[!"Screenshot of tweet compose box"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweet-box.png)
-[!"Screenshot of tweets"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweets.png)
-[!"Screenshot of initial tweets"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/initial-tweets.png)
+[!"Screenshot of tweet compose box"](https://github.com/fei-gao/tweeter/tree/master/docs/tweet-box.png)
+[!"Screenshot of tweets"](https://github.com/fei-gao/tweeter/tree/master/docs/tweets.png)
+[!"Screenshot of initial tweets"](https://github.com/fei-gao/tweeter/tree/master/docs/initial-tweets.png)
 
 ## Dependencies
 - body-parser

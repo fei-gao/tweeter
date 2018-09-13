@@ -3,4 +3,4 @@ node_modules/
 .DS_Store
 html/
 mongo_example.js
-.vscode
+.vscode/
