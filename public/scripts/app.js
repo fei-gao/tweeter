@@ -45,28 +45,16 @@ function renderTweets(tweets) {
 function submitForm(){
   $("form").on('submit',function(){
     event.preventDefault();
-    // $('#error').slideUp("slow");
+    $('#error').slideUp();
     $('#error').empty();
+    $('.counter').text('140');
     const isValid = validateForm();
     if(isValid === true){
       console.log("form valid");
-      // $.ajax({
-      //   type: 'POST',
-      //   url: '/tweets',
-      //   data: $("form").serialize(), //convert raw data into urlencoded format
-      //   success: function(response){
-      //     console.log('form submission success');
-      //     loadTweets();
-      //     $('textarea').val('');
-      //   },
-      //   error: function(){
-      //     console.log("form submission fail");
-      //   }
-      // })
       $.ajax({
         type: 'POST',
         url: '/tweets',
-        data: $("form").serialize(), //convert raw data into urlencoded format
+        data: $("form").serialize(), //convert form data into urlencoded format
       }).then(function(){
         console.log('form submission success');
         $('#tweets-container').empty();
@@ -77,10 +65,7 @@ function submitForm(){
       })
     } else {
       console.log("form invalid and not submitted");
-      // $('#error').html(isValid).slideDown("slow");
-      $('#error').slideDown("slow", function(){
-        $('#error').text(isValid);
-})
+      $('#error').text(isValid).slideDown("slow");
     }
   })
 }
@@ -100,34 +85,20 @@ function validateForm(){
   const str = $('textarea').val();
   const length = str.length;
   if( str === ""){
-// $('#error').slideDown("slow", function(){
-  // $('#error').text("empty string");
-// })
-    // $('#error').text("Content cannot be empty, type something.").slideDown("slow");
-    return "Content cannot be empty, type anything.";
+    return "Content cannot be empty.";
   } else if( length > 140){
-    // $('#error').slideDown();
-    // $('#error').text("Max charaters 140");
-    return "Characters overlimit, max 140.";
+    return "Max 140 characters.";
   } else {
     return true;
   }
 }
 
-
 $('document').ready(function(){
-
   loadTweets();
   submitForm();
   $('#compose-btn').click(function(){
-    // if($(".new-tweet").is(':visible')){
-    //   $(".new-tweet").slideUp();
-    // } else {
-    //   $('textarea').slideDown();
-    //   $('textarea').focus();
-    // }
     $(".new-tweet").slideToggle("slow", function(){
       $('textarea').focus();
     });
-    })
-  });
+  })
+});

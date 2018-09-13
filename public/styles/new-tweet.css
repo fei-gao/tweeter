@@ -3,8 +3,7 @@
     margin: 0 1em;
     border: 2px solid rgb(48, 43, 43);
     border-radius: 10px;
-    /* position: absolute; */
-    /* top: 140px; */
+    display:none;
 }
 
 h2 {
@@ -42,7 +41,7 @@ h2:after {
 textarea:focus, input:focus{
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgba(81, 203, 238, 1);
-  }
+}
 
 #error{
     color: rgb(104, 22, 22);

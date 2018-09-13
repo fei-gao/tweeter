@@ -8,7 +8,7 @@ function addAllEvents(){
     if(count < 0 ){
         $('textarea').parent().find(".counter").addClass("red");
     } 
-    });
+  });
 
 }
 
