@@ -93,6 +93,7 @@ function validateForm(){
   }
 }
 
+
 $('document').ready(function(){
   loadTweets();
   submitForm();

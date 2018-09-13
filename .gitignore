@@ -2,4 +2,5 @@ node_modules/
 .env
 .DS_Store
 html/
-launch.json
+mongo_example.js
+.vscode
