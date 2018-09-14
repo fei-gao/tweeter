@@ -16,11 +16,10 @@
 #nav-bar .header {
   font-size: 2em;
   margin-left: 10px;
-  line-height: 80px;
+  line-height: 5rem;
   vertical-align: middle;
   float: left;
 }
-
 #nav-bar:after {
   clear: both;
 }
@@ -30,14 +29,13 @@
   line-height: 50px;
   vertical-align: middle;
   margin: 12px;
-  width: 80px;
+  width: 5rem;
   border-radius: 0.5em;
   background-color: #e8fdff;
   color: #00a087;
   font-weight: 300;
   border: 2px solid #000;
 }
-
 #compose-btn:hover {
   background-color: #fff;
   color: #000;
@@ -47,7 +45,7 @@
   border: 2px solid #302b2b;
 }
 
-h2:after, .new-tweet textarea {
+.new-tweet textarea, .new-tweet h2:after {
   display: block;
 }
 
@@ -66,6 +64,13 @@ h2:after, .new-tweet textarea {
   text-align: left;
   padding: 2px 8px;
 }
+.new-tweet h2:after {
+  content: "";
+  background: black;
+  width: 398px;
+  height: 2px;
+  margin-bottom: 10px;
+}
 .new-tweet textarea {
   margin: 0 auto;
   width: 96%;
@@ -77,7 +82,7 @@ h2:after, .new-tweet textarea {
 }
 .new-tweet .counter {
   margin-top: 5px;
-  margin-right: 15px;
+  margin-right: 1rem;
   float: right;
   font-style: italic;
 }
@@ -88,14 +93,6 @@ h2:after, .new-tweet textarea {
 .new-tweet textarea:focus, .new-tweet input:focus {
   box-shadow: 0 0 5px #51cbee;
   border: 1px solid #51cbee;
-}
-
-h2:after {
-  content: "";
-  background: black;
-  width: 398px;
-  height: 2px;
-  margin-bottom: 10px;
 }
 
 html {
@@ -114,11 +111,12 @@ body {
 }
 
 main {
-  width: 450px;
+  width: 40%;
+  min-width: 450px;
   margin: auto;
   background-color: #fff;
   padding-top: 140px;
-  height: 1000px;
+  height: 100%;
 }
 
 .red {
@@ -130,17 +128,16 @@ article.tweets {
   border: 2px solid rgba(158, 150, 150, 0.6);
   border-radius: 10px;
 }
-
-.tweets:hover {
+article.tweets:hover {
   border: 2px solid rgba(158, 150, 150, 0.9);
 }
-.tweets:hover header {
+article.tweets:hover header {
   background-color: rgba(158, 150, 150, 0.9);
 }
-.tweets:hover img {
+article.tweets:hover img {
   opacity: 0.9;
 }
-.tweets:hover .icon {
+article.tweets:hover .icon {
   display: inline;
 }
 
@@ -149,6 +146,9 @@ article header {
   padding: 0.5em;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+article header #handle {
+  float: right;
 }
 article header img {
   border-radius: 5px;
@@ -168,17 +168,12 @@ article div {
 article footer {
   padding: 0.5em;
 }
-
-header #handle {
-  float: right;
-}
-
-span.icon {
+article footer span.icon {
   display: none;
   float: right;
   color: #00a087;
 }
-span.icon i {
+article footer span.icon i {
   padding: 3px;
 }
 

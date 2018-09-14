@@ -3,4 +3,6 @@ node_modules/
 .DS_Store
 html/
 mongo_example.js
+temp.js
+public/styles/original-layout.css
 .vscode/

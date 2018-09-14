@@ -21,7 +21,7 @@ function createTweetElement(obj){
   
   // Footer
   let $footer = $("<footer>");
-  let day = Math.floor((Date.now() - `${obj.created_at}`) / 86400000);
+  let day = Math.floor((Date.now() - `${obj.created_at}`) / (24 * 60 * 60 *1000));
   let $date = `<span> ${day} days ago </span>`; 
   let icon = `<span class='icon'>  
                 <i class='fab fa-font-awesome-flag'></i> 
