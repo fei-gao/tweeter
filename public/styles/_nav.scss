@@ -1,0 +1,50 @@
+$nav-bar: #00a087;
+$header-color: #e8fdff;
+$black: #000;
+$white: #fff;
+$font-stack: 'Roboto Condensed', sans-serif;
+
+#nav-bar {
+  position:fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: $nav-bar;
+  color: $header-color;
+  padding: 0 2em;
+  z-index: 1;
+
+  .logo {
+    height: 80px;
+    width: 80px;
+    float: left;
+  }
+
+  .header{
+    font-size: 2em;
+    margin-left: 10px;
+    line-height: 5rem;
+    vertical-align: middle;
+    float: left;
+  }
+  &:after{
+    clear:both;
+  }
+}
+
+#compose-btn {
+  float: right;
+  line-height: 50px;
+  vertical-align: middle;
+  margin: 12px;
+  width: 5rem;
+  border-radius: 0.5em;
+  background-color: $header-color;
+  color: $nav-bar;
+  font-weight: 300;
+  border: 2px solid $black;
+  &:hover {
+    background-color:$white;
+    color:$black;
+  }
+}
