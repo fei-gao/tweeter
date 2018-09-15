@@ -23,11 +23,9 @@ function createTweetElement(obj){
   let $footer = $("<footer>");
   let day = Math.floor((Date.now() - `${obj.created_at}`) / (24 * 60 * 60 *1000));
   let $date = `<span> ${day} days ago </span>`; 
-  let icon = `<span class='icon'>  
-                <i class='fab fa-font-awesome-flag'></i> 
+  let icon = `<i class='fab fa-font-awesome-flag'></i> 
                 <i class='fas fa-retweet'></i>
-                <i class='fas fa-heart'></i> 
-              </span>`;
+                <i class='fas fa-heart'></i>`;
   let $icons = $('<span>').addClass('icon').html(icon);
   $footer.append($date).append($icons);
   $tweet.append($footer);
@@ -93,6 +91,9 @@ function validateForm(){
   }
 }
 
+// function countLikes(){
+  
+// }
 
 $('document').ready(function(){
   loadTweets();
@@ -101,5 +102,14 @@ $('document').ready(function(){
     $(".new-tweet").slideToggle("slow", function(){
       $('textarea').focus();
     });
-  })
+  });
+
+
+  $("section").click(function(){
+    const target = event.target;
+    console.log("like icon clicked", target);
+    // $(".fa-heart").closest("article").data("count", 1);
+    console.log("---", $(this).parent().parent().parent();
+  });
+  // countLikes();
 });
