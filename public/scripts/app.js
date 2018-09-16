@@ -33,6 +33,7 @@ function createTweetElement(obj){
   return $tweet;
 };
 
+// render newly-created and existing tweets
 function renderTweets(tweets) {
   tweets.forEach(function(tweet){
     const $tweet = createTweetElement(tweet);
@@ -40,6 +41,7 @@ function renderTweets(tweets) {
   });
 }
 
+// validate form, POST and clear the textarea
 function submitForm(){
   $("form").on('submit',function(){
     event.preventDefault();
@@ -48,13 +50,11 @@ function submitForm(){
     $('.counter').text('140');
     const isValid = validateForm();
     if(isValid === true){
-      console.log("form valid");
       $.ajax({
         type: 'POST',
         url: '/tweets',
         data: $("form").serialize(), //convert form data into urlencoded format
       }).then(function(){
-        console.log('form submission success');
         $('#tweets-container').empty();
           loadTweets();
           $('textarea').val('');
@@ -62,54 +62,32 @@ function submitForm(){
         console.log("form valid but not submitted");
       })
     } else {
-      console.log("form invalid and not submitted");
       $('#error').text(isValid).slideDown("slow");
     }
   })
 }
 
-// fetch tweets and reload page
+// fetch all tweets and reload page
 function loadTweets(){
   $.ajax({
     type:'GET',
     url: '/tweets',
   }).then(function(tweetsArr){
-    console.log("fetch success", tweetsArr);
     renderTweets(tweetsArr);
     })
 };
 
-function validateForm(){
-  const str = $('textarea').val();
-  const length = str.length;
-  if( str === ""){
-    return "Content cannot be empty.";
-  } else if( length > 140){
-    return "Max 140 characters.";
-  } else {
-    return true;
-  }
-}
-
-// function countLikes(){
-  
-// }
-
-$('document').ready(function(){
-  loadTweets();
-  submitForm();
+function toggleNewTweet(){
   $('#compose-btn').click(function(){
     $(".new-tweet").slideToggle("slow", function(){
       $('textarea').focus();
     });
   });
+}
 
-
-  $("section").click(function(){
-    const target = event.target;
-    console.log("like icon clicked", target);
-    // $(".fa-heart").closest("article").data("count", 1);
-    console.log("---", $(this).parent().parent().parent();
-  });
-  // countLikes();
+$('document').ready(function(){
+  // inital-load existing tweets
+  loadTweets();
+  toggleNewTweet();
+  submitForm();
 });
