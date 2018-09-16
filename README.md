@@ -9,8 +9,7 @@ This repository is the starter code for the project: Students will fork and clon
 - To run locally, 
 1. Clone this repo.
 2. Install dependencies using the `npm install` command.
-3. Config local ```MONGODB_URI``` and ```PORT``` in ```.env```file. At root directory, ```touch .env``` to create ```.env``` file, then add ```MONGODB_URI=mongodb://localhost:27017/tweeter\n/n
-PORT=8080```
+3. Config local ```MONGODB_URI``` and ```PORT``` in ```.env```file. At root directory, ```touch .env``` to create ```.env``` file, then add two lines of code```MONGODB_URI=mongodb://localhost:27017/tweeter``` ```PORT=8080```
 4. Start the web server using the `npm start` command. The app will be served at <http://localhost:8080/>.
 5. Go to <http://localhost:8080/> in your browser.
 
