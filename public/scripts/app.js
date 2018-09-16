@@ -41,6 +41,18 @@ function renderTweets(tweets) {
   });
 }
 
+function validateForm(){
+  const str = $('textarea').val();
+  const length = str.length;
+  if( str === ""){
+    return "Content cannot be empty.";
+  } else if( length > 140){
+    return "Max 140 characters.";
+  } else {
+    return true;
+  }
+}
+
 // validate form, POST and clear the textarea
 function submitForm(){
   $("form").on('submit',function(){
